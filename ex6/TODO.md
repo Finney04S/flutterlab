@@ -1,0 +1,2 @@
+- [x] Add sqflite: ^2.3.0 and path_provider: ^2.1.2 to pubspec.yaml dependencies
+- [x] Run flutter pub get to install the dependencies
