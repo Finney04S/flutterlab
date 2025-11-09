@@ -1,0 +1,5 @@
+- [ ] Add searchProducts method in lib/database/database_helper.dart
+- [ ] Create lib/screens/search_product_screen.dart
+- [ ] Create lib/screens/update_product_screen.dart
+- [ ] Update lib/screens/product_list_screen.dart to add search icon and navigation
+- [ ] Update lib/screens/search_product_screen.dart to navigate to UpdateProductScreen

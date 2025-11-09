@@ -27,7 +27,7 @@ class Product {
       id: id,
       name: map['name'] ?? '',
       description: map['description'] ?? '',
-      price: (map['price'] as num?)?.toDouble() ?? 0.0,
+      price: (map['price'] is num ? (map['price'] as num).toDouble() : double.tryParse(map['price'].toString()) ?? 0.0),
       imageUrl: map['imageUrl'] ?? '',
     );
   }

@@ -30,4 +30,15 @@ class DatabaseHelper {
   Future<void> deleteProduct(String id) async {
     await firestore.collection('products').doc(id).delete();
   }
+
+  Future<List<Product>> searchProducts(String query) async {
+    final querySnapshot = await firestore
+        .collection('products')
+        .where('name', isGreaterThanOrEqualTo: query)
+        .where('name', isLessThanOrEqualTo: query + '\uf8ff')
+        .get();
+    return querySnapshot.docs.map((doc) {
+      return Product.fromMap(doc.data(), doc.id);
+    }).toList();
+  }
 }

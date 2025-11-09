@@ -3,6 +3,7 @@ import '../database/database_helper.dart';
 import '../models/product.dart';
 import 'add_product_screen.dart';
 import 'edit_product_screen.dart';
+import 'search_product_screen.dart';
 
 class ProductListScreen extends StatefulWidget {
   const ProductListScreen({super.key});
@@ -38,6 +39,17 @@ class _ProductListScreenState extends State<ProductListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Product Catalog'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchProductScreen()),
+              );
+            },
+          ),
+        ],
       ),
       body: _products.isEmpty
           ? const Center(child: Text('No products available'))
